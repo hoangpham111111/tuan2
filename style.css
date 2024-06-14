@@ -1,0 +1,143 @@
+html {
+  height: 100%;
+}
+body {
+  width: 100%;
+  height: 100%;
+}
+.main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.left {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hide {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: white;
+  z-index: 200;
+}
+.animate {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  animation: color-rotate 2s linear infinite;
+}
+.circle2 {
+  animation-delay: -1s;
+}
+.container i {
+  position: absolute;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 50%;
+  background: lime;
+  border-radius: 50%;
+  z-index: 100;
+  box-shadow: 0 0 10px lime, 0 0 20px lime, 0 0 30px lime, 0 0 40px lime,
+    0 0 50px lime;
+}
+.circle1::before,
+.circle2::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to top, transparent, rgba(15, 255, 0, 0.4));
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+}
+@keyframes color-rotate {
+  0% {
+    transform: rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* ex1 */
+
+.shape {
+  margin: 0px 35px;
+  width: 70px;
+  height: 250px;
+  border-radius: 50px;
+  background-color: aliceblue;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 30px 20px 30px rgb(206, 208, 208);
+}
+
+i {
+  width: 100%;
+  height: 70%;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  background: rgb(186, 26, 157);
+  position: absolute;
+  bottom: 0;
+  animation: shape 3s linear infinite;
+  transform: translate(0px, 100%);
+}
+
+.shape_2 {
+  animation-delay: 1s;
+  background-color: #000;
+}
+.shape_3 {
+  animation-delay: 2s;
+  background-color: #20925b;
+}
+.shape_4 {
+  animation-delay: 3s;
+  background-color: #cb3131;
+}
+.shape_5 {
+  animation-delay: 4s;
+  background-color: #b9bb34;
+}
+
+@keyframes shape {
+  0% {
+    transform: translateY(100%);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
